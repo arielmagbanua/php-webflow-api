@@ -6,6 +6,7 @@
     "guzzlehttp/guzzle": "^7.10"
   },
   "require-dev": {
+    "friendsofphp/php-cs-fixer": "^3.95",
     "phpunit/phpunit": "^13.1"
   },
   "type": "library",
@@ -22,6 +23,7 @@
   },
   "scripts": {
     "test": "vendor/bin/phpunit",
+    "check": "vendor/bin/php-cs-fixer fix --dry-run",
     "format": "vendor/bin/php-cs-fixer fix"
   },
   "authors": [

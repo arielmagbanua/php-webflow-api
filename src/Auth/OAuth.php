@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ArielMagbanua\PhpWebflowApi\Auth;
 
 use GuzzleHttp\Client;
@@ -8,9 +10,9 @@ use Exception;
 
 /**
  * OAuth class
- * 
+ *
  * This class is used to authenticate with the Webflow API using OAuth 2.0.
- * 
+ *
  * @package ArielMagbanua\PhpWebflowApi\Auth
  * @author Ariel Magbanua <ariel@arielmagbanua.com>
  */
@@ -65,7 +67,7 @@ class OAuth
      * @return string
      */
     public function getAuthorizationUrl(): string
-    {   
+    {
         // get the base authorize url
         $url = $this->apiBaseUrl . '/oauth/authorize';
 
@@ -105,16 +107,16 @@ class OAuth
         // execute the request
         $response = $this->httpClient->send($request);
 
+        // get the response body contents
+        $contents = $response->getBody()->getContents();
+
         // check if the response is successful
         if ($response->getStatusCode() !== 200) {
-            throw new Exception('Failed to get access token: ' . $response->getBody()->getContents());
+            throw new Exception('Failed to get access token: ' . $contents);
         }
 
-        // get the response body
-        $body = $response->getBody();
-
         // decode the response body
-        $data = json_decode($body, true);
+        $data = json_decode($contents, true);
 
         // return the access token
         return new AccessToken(
