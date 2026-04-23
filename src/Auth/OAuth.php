@@ -80,6 +80,11 @@ class OAuth
             'state' => $this->state,
         ];
 
+        // remove the redirect uri if it is not set
+        if (!$this->redirectUri) {
+            unset($params['redirect_uri']);
+        }
+
         // build the authorization url
         return $url . '?' . http_build_query($params);
     }
@@ -90,7 +95,7 @@ class OAuth
      * @param string $code
      * @return AccessToken
      */
-    public function getAccessToken(string $code): AccessToken
+    public function requestAccessToken(string $code): AccessToken
     {
         // create a request
         $request = new Request(
@@ -121,8 +126,7 @@ class OAuth
         // return the access token
         return new AccessToken(
             accessToken: $data['access_token'],
-            refreshToken: $data['refresh_token'] ?? null,
-            expiresIn: $data['expires_in'] ?? 0,
+            scopes: $data['scopes'] ?? [],
             tokenType: $data['token_type'] ?? 'Bearer',
         );
     }
