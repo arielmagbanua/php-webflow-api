@@ -18,8 +18,6 @@ class AccessToken
      * The AccessToken constructor
      *
      * @param string $accessToken The access token
-     * @param string|null $refreshToken The refresh token
-     * @param int|null $expiresIn The expires in
      * @param string|null $tokenType The token type
      * @return void
      */
