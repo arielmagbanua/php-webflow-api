@@ -13,14 +13,12 @@ class AccessTokenTest extends TestCase
     {
         $accessToken = new AccessToken(
             accessToken: 'test',
-            refreshToken: 'test',
-            expiresIn: 1000,
+            scopes: ['test'],
             tokenType: 'Bearer',
         );
 
         $this->assertEquals('test', $accessToken->getAccessToken());
-        $this->assertEquals('test', $accessToken->getRefreshToken());
-        $this->assertEquals(1000, $accessToken->getExpiresIn());
+        $this->assertEquals(['test'], $accessToken->getScopes());
         $this->assertEquals('Bearer', $accessToken->getTokenType());
     }
 }
