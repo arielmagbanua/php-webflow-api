@@ -50,7 +50,7 @@ class OAuth extends Api
     public function getAuthorizationUrl(): string
     {
         // get the base authorize url
-        $url = $this->apiBaseUrl . '/oauth/authorize';
+        $url = 'https://webflow.com/oauth/authorize';
 
         // authorization params
         $params = [
