@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ArielMagbanua\PhpWebflowApi\Collections;
+namespace ArielMagbanua\PhpWebflowApi\Collections\V2;
 
 use ArielMagbanua\PhpWebflowApi\Collections\Contracts\LiveItems;
 
