@@ -23,7 +23,7 @@ class OAuth
      *
      * @var string
      */
-    protected string $apiBaseUrl = 'https://webflow.com';
+    protected string $apiBaseUrl = 'https://api.webflow.com';
 
     /**
      * The HTTP client
