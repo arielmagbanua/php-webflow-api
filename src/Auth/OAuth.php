@@ -5,8 +5,7 @@ declare(strict_types=1);
 namespace ArielMagbanua\PhpWebflowApi\Auth;
 
 use GuzzleHttp\Client;
-use GuzzleHttp\Psr7\Request;
-use Exception;
+use ArielMagbanua\PhpWebflowApi\Api;
 
 /**
  * OAuth class
@@ -16,22 +15,8 @@ use Exception;
  * @package ArielMagbanua\PhpWebflowApi\Auth
  * @author Ariel Magbanua <ariel@arielmagbanua.com>
  */
-class OAuth
+class OAuth extends Api
 {
-    /**
-     * The base URL for the Webflow API
-     *
-     * @var string
-     */
-    protected string $apiBaseUrl = 'https://api.webflow.com';
-
-    /**
-     * The HTTP client
-     *
-     * @var Client
-     */
-    protected Client $httpClient;
-
     /**
      * The OAuth constructor
      *
@@ -49,10 +34,6 @@ class OAuth
         protected ?string $state = null,
         protected ?string $redirectUri = null,
         protected ?array $scopes = null,
-        protected ?array $headers = [
-            'Content-Type' => 'application/json',
-            'Accept' => 'application/json',
-        ],
     ) {
         // configure the HTTP client
         $this->httpClient = new Client([
@@ -97,6 +78,7 @@ class OAuth
      */
     public function requestAccessToken(string $code): AccessToken
     {
+        /*
         // create a request
         $request = new Request(
             method: 'POST',
@@ -122,6 +104,18 @@ class OAuth
 
         // decode the response body
         $data = json_decode($contents, true);
+        */
+
+        $data = $this->sendRequest(
+            method: 'POST',
+            uri: 'oauth/access_token',
+            body: [
+                'code' => $code,
+                'client_id' => $this->clientId,
+                'client_secret' => $this->clientSecret,
+                'grant_type' => 'authorization_code',
+            ],
+        );
 
         // return the access token
         return new AccessToken(
