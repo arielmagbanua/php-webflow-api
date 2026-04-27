@@ -1,0 +1,5 @@
+{
+  "access_token": "a0ed453e7beaf4698218ecbc3df41a4ebf8b6d870a9010b5ef-test-access-token",
+  "token_type": "bearer",
+  "scope": "cms:read cms:write"
+}

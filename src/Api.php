@@ -39,6 +39,18 @@ abstract class Api
     ];
 
     /**
+     * Set the HTTP client
+     *
+     * @param Client $httpClient The HTTP client
+     * @return void
+     */
+    public function setHttpClient(Client $httpClient): void
+    {
+        // set the HTTP client
+        $this->httpClient = $httpClient;
+    }
+
+    /**
      * Create a request
      *
      * @param string $method The HTTP method
