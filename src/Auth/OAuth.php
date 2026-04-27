@@ -91,7 +91,7 @@ class OAuth extends Api
         // return the access token
         return new AccessToken(
             accessToken: $data['access_token'],
-            scopes: $data['scopes'] ?? [],
+            scopes: isset($data['scope']) ? explode(' ', $data['scope']) : ($data['scopes'] ?? []),
             tokenType: ucfirst($data['token_type'] ?? 'Bearer'),
         );
     }
