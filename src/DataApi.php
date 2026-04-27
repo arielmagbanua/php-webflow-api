@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace ArielMagbanua\PhpWebflowApi;
 
-use GuzzleHttp\Client;
-
 /**
  * The Base Data API class for the Webflow API
  *

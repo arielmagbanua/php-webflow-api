@@ -75,7 +75,7 @@ abstract class Api
     protected function sendRequest(string $method, string $uri, ?array $body = null): ?array
     {
         if (!$this->httpClient) {
-            return null; // configured client
+            return null; // no configured client
         }
 
         $requestOptions = [
@@ -86,6 +86,7 @@ abstract class Api
             $requestOptions['body'] = json_encode($body);
         }
 
+        // send the request
         $response = $this->httpClient->request($method, $uri, $requestOptions);
 
         // get the response body contents
