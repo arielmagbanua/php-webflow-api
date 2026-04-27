@@ -39,6 +39,20 @@ abstract class Api
     ];
 
     /**
+     * The API constructor
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        // set the HTTP client
+        $this->setHttpClient(new Client([
+            'base_uri' => $this->apiBaseUrl,
+            'headers' => $this->headers,
+        ]));
+    }
+
+    /**
      * Set the HTTP client
      *
      * @param Client $httpClient The HTTP client
@@ -61,7 +75,7 @@ abstract class Api
     protected function sendRequest(string $method, string $uri, ?array $body = null): ?array
     {
         if (!$this->httpClient) {
-            return null; // configured client
+            return null; // no configured client
         }
 
         $requestOptions = [
@@ -72,6 +86,7 @@ abstract class Api
             $requestOptions['body'] = json_encode($body);
         }
 
+        // send the request
         $response = $this->httpClient->request($method, $uri, $requestOptions);
 
         // get the response body contents

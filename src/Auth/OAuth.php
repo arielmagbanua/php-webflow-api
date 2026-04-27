@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace ArielMagbanua\PhpWebflowApi\Auth;
 
-use GuzzleHttp\Client;
 use ArielMagbanua\PhpWebflowApi\Api;
 
 /**
@@ -34,11 +33,8 @@ class OAuth extends Api
         protected ?string $redirectUri = null,
         protected ?array $scopes = null,
     ) {
-        // configure the HTTP client
-        $this->httpClient = new Client([
-            'base_uri' => $this->apiBaseUrl,
-            'headers' => $this->headers,
-        ]);
+        // call the parent constructor
+        parent::__construct();
     }
 
     /**
@@ -77,6 +73,7 @@ class OAuth extends Api
      */
     public function requestAccessToken(string $code): AccessToken
     {
+        // send the request
         $data = $this->sendRequest(
             method: 'POST',
             uri: 'oauth/access_token',

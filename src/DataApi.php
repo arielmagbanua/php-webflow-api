@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace ArielMagbanua\PhpWebflowApi;
 
-use GuzzleHttp\Client;
-
 /**
  * The Base Data API class for the Webflow API
  *
@@ -39,10 +37,7 @@ abstract class DataApi extends Api
             'Authorization' => 'Bearer ' . $this->accessToken,
         ]);
 
-        // set the HTTP client
-        $this->setHttpClient(new Client([
-            'base_uri' => $this->apiBaseUrl,
-            'headers' => $this->headers,
-        ]));
+        // call the parent constructor
+        parent::__construct();
     }
 }
