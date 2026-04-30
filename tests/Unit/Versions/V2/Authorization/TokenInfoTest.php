@@ -11,7 +11,7 @@ use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\TestCase;
 
-class TokenTest extends TestCase
+class TokenInfoTest extends TestCase
 {
     /**
      * Test getUserInfo method
