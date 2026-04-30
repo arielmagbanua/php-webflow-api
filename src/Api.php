@@ -40,8 +40,6 @@ abstract class Api
 
     /**
      * The API constructor
-     *
-     * @return void
      */
     public function __construct()
     {
@@ -56,7 +54,6 @@ abstract class Api
      * Set the HTTP client
      *
      * @param Client $httpClient The HTTP client
-     * @return void
      */
     public function setHttpClient(Client $httpClient): void
     {
@@ -70,7 +67,6 @@ abstract class Api
      * @param string $method The HTTP method
      * @param string $uri The URI
      * @param array|null $body The body
-     * @return array|null
      */
     protected function sendRequest(string $method, string $uri, ?array $body = null): ?array
     {

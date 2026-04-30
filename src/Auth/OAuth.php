@@ -24,7 +24,6 @@ class OAuth extends Api
      * @param string|null $state The state
      * @param string|null $redirectUri The redirect URI
      * @param array|null $scopes The scopes
-     * @return void
      */
     public function __construct(
         protected ?string $clientId = null,
@@ -39,8 +38,6 @@ class OAuth extends Api
 
     /**
      * Get the authorization URL
-     *
-     * @return string
      */
     public function getAuthorizationUrl(): string
     {
@@ -68,8 +65,7 @@ class OAuth extends Api
     /**
      * Get the access token
      *
-     * @param string $code
-     * @return AccessToken
+     * @param string $code The authorization code
      */
     public function requestAccessToken(string $code): AccessToken
     {
