@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ArielMagbanua\PhpWebflowApi\Versions\v2\CollectionItems;
+namespace ArielMagbanua\PhpWebflowApi\Versions\V2\CollectionItems;
 
 use ArielMagbanua\PhpWebflowApi\CollectionItems\Contracts\StagedItems;
 
