@@ -55,6 +55,14 @@ abstract class LiveItems extends WebflowCollection
     abstract public function getItem(string $id, ?string $cmsLocaleId = null): ?array;
 
     /**
+     * Get a live item by slug
+     *
+     * @param string $slug The slug of the live item
+     * @param string|null $cmsLocaleId The CMS locale ID
+     */
+    abstract public function getItemBySlug(string $slug, ?string $cmsLocaleId = null): ?array;
+
+    /**
      * Create the live items
      *
      * @param array $items The items to create

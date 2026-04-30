@@ -101,6 +101,32 @@ class StagedCollection extends StagedItems
     }
 
     /**
+     * Get an item by slug
+     *
+     * @param string $slug The slug of the item
+     * @param string|null $cmsLocaleId The CMS locale ID
+     */
+    public function getItemBySlug(string $slug, ?string $cmsLocaleId = null): ?array
+    {
+        $response = $this->listItems(
+            cmsLocaleId: $cmsLocaleId,
+            limit: 1,
+            slug: $slug,
+        );
+
+        if ($response === null) {
+            return null;
+        }
+
+        $items = $response['items'] ?? null;
+        if (!is_array($items) || $items === []) {
+            return null;
+        }
+
+        return $items[0];
+    }
+
+    /**
      * Create the items
      *
      * @param array $items The items to create
