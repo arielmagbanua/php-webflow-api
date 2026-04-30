@@ -27,7 +27,6 @@ abstract class StagedItems extends DataApi
      * @param array|null $lastUpdated The last updated
      * @param string|null $sortBy The sort by
      * @param string|null $sortOrder The sort order
-     * @return array|null
      */
     abstract public function listItems(
         ?string $cmsLocaleId = null,
@@ -47,7 +46,6 @@ abstract class StagedItems extends DataApi
      *
      * @param string $id The ID of the live item
      * @param string|null $cmsLocaleId The CMS locale ID
-     * @return array|null
      */
     abstract public function getItem(string $id, ?string $cmsLocaleId = null): ?array;
 
@@ -56,7 +54,6 @@ abstract class StagedItems extends DataApi
      *
      * @param array $items The items to create
      * @param bool|null $skipInvalidFiles Whether to skip invalid files
-     * @return array|null
      */
     abstract public function createItems(array $items, ?bool $skipInvalidFiles = null): ?array;
 
@@ -65,7 +62,6 @@ abstract class StagedItems extends DataApi
      *
      * @param array $items The items to update
      * @param bool|null $skipInvalidFiles Whether to skip invalid files
-     * @return array|null
      */
     abstract public function updateItems(array $items, ?bool $skipInvalidFiles = null): ?array;
 
@@ -73,7 +69,6 @@ abstract class StagedItems extends DataApi
      * Unpublish the live items
      *
      * @param array $ids The IDs of the live items to unpublish
-     * @return array|null
      */
     abstract public function deleteItems(array $ids): ?array;
 
@@ -81,7 +76,6 @@ abstract class StagedItems extends DataApi
      * Publish the live items
      *
      * @param array $ids The IDs of the live items to publish
-     * @return array|null
      */
     abstract public function publishItemIds(array $ids): ?array;
 }

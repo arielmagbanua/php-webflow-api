@@ -25,10 +25,8 @@ abstract class DataApi extends Api
      * @param string $accessToken The access token
      * @param string $version The API version
      */
-    public function __construct(
-        protected string $accessToken,
-        protected string $version,
-    ) {
+    public function __construct(protected string $accessToken, protected string $version)
+    {
         // set the whole base URL with the API version
         $this->apiBaseUrl = $this->apiBaseUrl . '/' . $this->version . '/';
 

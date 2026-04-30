@@ -21,10 +21,9 @@ class LiveCollection extends LiveItems
      * @param string $accessToken The access token
      * @param string $collectionId The collection ID
      */
-    public function __construct(
-        string $accessToken,
-        protected string $collectionId,
-    ) {
+    public function __construct(string $accessToken, protected string $collectionId)
+    {
+        // call the parent constructor
         parent::__construct(accessToken: $accessToken, version: 'v2');
     }
 
@@ -41,7 +40,6 @@ class LiveCollection extends LiveItems
      * @param array|null $lastUpdated The last updated
      * @param string|null $sortBy The sort by
      * @param string|null $sortOrder The sort order
-     * @return array|null
      */
     public function listItems(
         ?string $cmsLocaleId = null,
@@ -83,7 +81,6 @@ class LiveCollection extends LiveItems
      *
      * @param string $id The ID of the live item
      * @param string|null $cmsLocaleId The CMS locale ID
-     * @return array|null
      */
     public function getItem(string $id, ?string $cmsLocaleId = null): ?array
     {
@@ -108,7 +105,6 @@ class LiveCollection extends LiveItems
      *
      * @param array $items The items to create
      * @param bool|null $skipInvalidFiles Whether to skip invalid files
-     * @return array|null
      */
     public function createItems(array $items, ?bool $skipInvalidFiles = null): ?array
     {
@@ -136,7 +132,6 @@ class LiveCollection extends LiveItems
      *
      * @param array $items The items to update
      * @param bool|null $skipInvalidFiles Whether to skip invalid files
-     * @return array|null
      */
     public function updateItems(array $items, ?bool $skipInvalidFiles = null): ?array
     {
@@ -172,7 +167,6 @@ class LiveCollection extends LiveItems
      * ]
      * ```
      * @param array $items The items to unpublish
-     * @return array|null
      */
     public function unpublishItems(array $items): ?array
     {

@@ -21,10 +21,9 @@ class StagedCollection extends StagedItems
        * @param string $accessToken The access token
        * @param string $collectionId The collection ID
        */
-    public function __construct(
-        string $accessToken,
-        protected string $collectionId,
-    ) {
+    public function __construct(string $accessToken, protected string $collectionId)
+    {
+        // call the parent constructor
         parent::__construct(accessToken: $accessToken, version: 'v2');
     }
 
@@ -36,7 +35,11 @@ class StagedCollection extends StagedItems
      * @param int|null $limit The limit
      * @param string|null $name The name
      * @param string|null $slug The slug
-     * @return array|null
+     * @param array|null $createdOn The created on
+     * @param array|null $lastPublished The last published
+     * @param array|null $lastUpdated The last updated
+     * @param string|null $sortBy The sort by
+     * @param string|null $sortOrder The sort order
      */
     public function listItems(
         ?string $cmsLocaleId = null,
@@ -78,7 +81,6 @@ class StagedCollection extends StagedItems
      *
      * @param string $id The ID of the item
      * @param string|null $cmsLocaleId The CMS locale ID
-     * @return array|null
      */
     public function getItem(string $id, ?string $cmsLocaleId = null): ?array
     {
@@ -103,7 +105,6 @@ class StagedCollection extends StagedItems
      *
      * @param array $items The items to create
      * @param bool|null $skipInvalidFiles Whether to skip invalid files
-     * @return array|null
      */
     public function createItems(array $items, ?bool $skipInvalidFiles = null): ?array
     {
@@ -131,7 +132,6 @@ class StagedCollection extends StagedItems
      *
      * @param array $items The items to update
      * @param bool|null $skipInvalidFiles Whether to skip invalid files
-     * @return array|null
      */
     public function updateItems(array $items, ?bool $skipInvalidFiles = null): ?array
     {
@@ -167,7 +167,6 @@ class StagedCollection extends StagedItems
      * ]
      * ```
      * @param array $items The items to delete
-     * @return array|null
      */
     public function deleteItems(array $items): ?array
     {
@@ -192,7 +191,6 @@ class StagedCollection extends StagedItems
      * $ids = ['580e64008c9a982ac9b8b754', '580e64008c9a982ac9b8b755'];
      * ```
      * @param array $ids The IDs of the items to publish
-     * @return array|null
      */
     public function publishItemIds(array $ids): ?array
     {

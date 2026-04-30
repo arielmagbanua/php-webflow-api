@@ -19,7 +19,6 @@ class AccessToken
      *
      * @param string $accessToken The access token
      * @param string|null $tokenType The token type
-     * @return void
      */
     public function __construct(
         protected string $accessToken,
@@ -31,8 +30,6 @@ class AccessToken
 
     /**
      * Get the access token
-     *
-     * @return string
      */
     public function getAccessToken(): string
     {
@@ -41,8 +38,6 @@ class AccessToken
 
     /**
      * Get the token type
-     *
-     * @return string
      */
     public function getTokenType(): string
     {
@@ -51,8 +46,6 @@ class AccessToken
 
     /**
      * Get the scopes
-     *
-     * @return array
      */
     public function getScopes(): array
     {
