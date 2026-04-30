@@ -1,6 +1,13 @@
 {
   "name": "arielmagbanua/php-webflow-api",
   "description": "PHP SDK for the Webflow Data API",
+  "keywords": [
+    "webflow",
+    "api",
+    "sdk",
+    "php"
+  ],
+  "homepage": "https://github.com/arielmagbanua/php-webflow-api",
   "require": {
     "php": "^8.1",
     "guzzlehttp/guzzle": "^7.10"
@@ -26,7 +33,7 @@
     "test": "vendor/bin/phpunit",
     "check": "vendor/bin/php-cs-fixer fix --dry-run",
     "format": "vendor/bin/php-cs-fixer fix",
-    "phpstan": "./vendor/bin/phpstan analyse src tests --level=5"
+    "phpstan": "vendor/bin/phpstan analyse src tests --level=5"
   },
   "authors": [
     {
