@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace ArielMagbanua\PhpWebflowApi\Versions\V2\CollectionItems;
 
-use ArielMagbanua\PhpWebflowApi\CollectionItems\Contracts\StagedItems;
+use ArielMagbanua\PhpWebflowApi\Cms\CollectionItems\Contracts\StagedItems;
 
 /**
  * The Staged Collection class for the Webflow API

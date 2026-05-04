@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace ArielMagbanua\PhpWebflowApi\Versions\V2\CollectionItems;
 
-use ArielMagbanua\PhpWebflowApi\CollectionItems\Contracts\LiveItems;
+use ArielMagbanua\PhpWebflowApi\Cms\CollectionItems\Contracts\LiveItems;
 
 /**
  * The Live Collection class for the Webflow API

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ArielMagbanua\PhpWebflowApi\CollectionItems\Contracts;
+namespace ArielMagbanua\PhpWebflowApi\Cms\CollectionItems\Contracts;
 
 use ArielMagbanua\PhpWebflowApi\DataApi;
 
