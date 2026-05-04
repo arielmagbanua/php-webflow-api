@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ArielMagbanua\PhpWebflowApi\Cms\Auth;
+namespace ArielMagbanua\PhpWebflowApi\DataApi\Auth;
 
 /**
  * AccessToken class

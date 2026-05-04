@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace ArielMagbanua\PhpWebflowApi\Tests\Unit\Auth;
 
-use ArielMagbanua\PhpWebflowApi\Cms\Auth\AccessToken;
+use ArielMagbanua\PhpWebflowApi\DataApi\Auth\AccessToken;
 use PHPUnit\Framework\TestCase;
 
 class AccessTokenTest extends TestCase
