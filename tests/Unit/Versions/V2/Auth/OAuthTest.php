@@ -73,8 +73,8 @@ class OAuthTest extends TestCase
 
     public function testRequestAccessToken(): void
     {
-        $requestPayload = json_decode(file_get_contents(__DIR__ . '/../../payloads/getAccessTokenRequestPayload.json'), true);
-        $responsePayload = json_decode(file_get_contents(__DIR__ . '/../../payloads/requestAccessTokenResponsePayload.json'), true);
+        $requestPayload = json_decode(file_get_contents(__DIR__ . '/../../../../payloads/requestAccessTokenRequestPayload.json'), true);
+        $responsePayload = json_decode(file_get_contents(__DIR__ . '/../../../../payloads/requestAccessTokenResponsePayload.json'), true);
 
         $container = [];
         $history = Middleware::history($container);
