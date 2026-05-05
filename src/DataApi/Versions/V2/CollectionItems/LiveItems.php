@@ -12,7 +12,7 @@ use ArielMagbanua\PhpWebflowApi\DataApi\Cms\CollectionItems\Contracts\LiveItems 
  * @package ArielMagbanua\PhpWebflowApi\DataApi\Versions\V2\CollectionItems
  * @todo create unit tests for this class
  */
-class LiveCollection extends LiveItemsContract
+class LiveItems extends LiveItemsContract
 {
     /**
      * The Live Collection constructor
@@ -28,6 +28,8 @@ class LiveCollection extends LiveItemsContract
 
     /**
      * List all published items in a collection.
+     * 
+     * @link https://developers.webflow.com/data/v2.0.0/reference/cms/collection-items/live-items/list-items-live
      *
      * @param string|null $cmsLocaleId The CMS locale ID
      * @param int|null $offset The offset
@@ -77,7 +79,7 @@ class LiveCollection extends LiveItemsContract
 
     /**
      * Get details of a selected Collection live Item.
-     * 
+     *
      * @link https://developers.webflow.com/data/v2.0.0/reference/cms/collection-items/live-items/get-item-live
      *
      * @param string $id The ID of the live item
@@ -129,7 +131,7 @@ class LiveCollection extends LiveItemsContract
 
     /**
      * Create item(s) in a collection that will be immediately published to the live site.
-     * 
+     *
      * @link https://developers.webflow.com/data/v2.0.0/reference/cms/collection-items/live-items/create-item-live
      *
      * @param array $items The items to create
@@ -158,7 +160,7 @@ class LiveCollection extends LiveItemsContract
 
     /**
      * Update a single published item or multiple published items (up to 100) in a Collection.
-     * 
+     *
      * @link https://developers.webflow.com/data/v2.0.0/reference/cms/collection-items/live-items/update-items-live
      *
      * @param array $items The items to update
@@ -187,7 +189,7 @@ class LiveCollection extends LiveItemsContract
 
     /**
      * Unpublish up to 100 items from the live site and set the isDraft property to true.
-     * 
+     *
      * @link https://developers.webflow.com/data/v2.0.0/reference/cms/collection-items/live-items/delete-items-live
      *
      * Example $items structure:

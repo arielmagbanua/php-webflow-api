@@ -12,7 +12,7 @@ use ArielMagbanua\PhpWebflowApi\DataApi\Cms\CollectionItems\Contracts\StagedItem
  * @package ArielMagbanua\PhpWebflowApi\DataApi\Versions\V2\CollectionItems
  * @todo create unit tests for this class
  */
-class StagedCollection extends StagedItemsContract
+class StagedItems extends StagedItemsContract
 {
     /**
      * The Staged Collection constructor
