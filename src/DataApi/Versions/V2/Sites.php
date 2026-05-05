@@ -26,6 +26,8 @@ class Sites extends SitesContract
 
     /**
      * List of all sites the provided access token is able to access.
+     * 
+     * @link https://developers.webflow.com/data/v2.0.0/reference/sites/list
      */
     public function listSites(): ?array
     {
@@ -38,6 +40,8 @@ class Sites extends SitesContract
     /**
      * Get details of a site.
      *
+     * @link https://developers.webflow.com/data/v2.0.0/reference/sites/get
+     * 
      * @param string $siteId The site ID
      */
     public function getSite(string $siteId): ?array
@@ -51,6 +55,8 @@ class Sites extends SitesContract
     /**
      * Get a list of all custom domains related to site.
      *
+     * @link https://developers.webflow.com/data/v2.0.0/reference/sites/get-custom-domain
+     * 
      * @param string $siteId The site ID
      * @return array|null
      */
@@ -66,6 +72,8 @@ class Sites extends SitesContract
      * Publishes a site or an individual page to one or more domains.
      * If multiple individual pages are published to staging, publishing from staging to production publishes all staged changes.
      *
+     * @link https://developers.webflow.com/data/v2.0.0/reference/sites/publish
+     * 
      * @param string $siteId
      * @return array|null
      */
