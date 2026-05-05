@@ -5,12 +5,11 @@ declare(strict_types=1);
 namespace ArielMagbanua\PhpWebflowApi\DataApi\Versions\V2\Authentication;
 
 /**
- * AccessToken class
+ * The AccessToken class for the Webflow API
  *
  * This class is used to store the access token and refresh token.
  *
- * @package ArielMagbanua\PhpWebflowApi\Auth
- * @author Ariel Magbanua <ariel@arielmagbanua.com>
+ * @package ArielMagbanua\PhpWebflowApi\DataApi\Versions\V2\Authentication
  */
 class AccessToken
 {

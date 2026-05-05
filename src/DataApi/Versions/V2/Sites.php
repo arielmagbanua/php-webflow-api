@@ -9,7 +9,7 @@ use ArielMagbanua\PhpWebflowApi\DataApi\Sites\Contracts\Sites as SitesContract;
 /**
  * The Sites class for the Webflow API
  *
- * @package ArielMagbanua\PhpWebflowApi\DataApi\Sites\V2
+ * @package ArielMagbanua\PhpWebflowApi\DataApi\Versions\V2
  * @todo Create a test for this class
  */
 class Sites extends SitesContract

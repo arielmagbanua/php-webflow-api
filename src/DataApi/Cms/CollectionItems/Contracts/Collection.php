@@ -9,8 +9,7 @@ use ArielMagbanua\PhpWebflowApi\DataApi\Api;
 /**
  * The Collection class for the Webflow API
  *
- * @package ArielMagbanua\PhpWebflowApi\Collections
- * @author Ariel Magbanua <ariel@arielmagbanua.com>
+ * @package ArielMagbanua\PhpWebflowApi\DataApi\Cms\CollectionItems\Contracts
  */
 abstract class Collection extends Api
 {

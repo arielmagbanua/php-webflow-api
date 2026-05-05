@@ -7,12 +7,11 @@ namespace ArielMagbanua\PhpWebflowApi\DataApi\Versions\V2\Authentication;
 use ArielMagbanua\PhpWebflowApi\BaseApi;
 
 /**
- * OAuth class
+ * The OAuth class for the Webflow API
  *
  * This class is used to authenticate with the Webflow API using OAuth 2.0.
  *
- * @package ArielMagbanua\PhpWebflowApi\Auth
- * @author Ariel Magbanua <ariel@arielmagbanua.com>
+ * @package ArielMagbanua\PhpWebflowApi\DataApi\Versions\V2\Authentication
  */
 class OAuth extends BaseApi
 {

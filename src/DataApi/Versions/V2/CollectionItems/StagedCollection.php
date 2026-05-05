@@ -9,8 +9,7 @@ use ArielMagbanua\PhpWebflowApi\DataApi\Cms\CollectionItems\Contracts\StagedItem
 /**
  * The Staged Collection class for the Webflow API
  *
- * @package ArielMagbanua\PhpWebflowApi\Collections\V2
- * @author Ariel Magbanua <ariel@arielmagbanua.com>
+ * @package ArielMagbanua\PhpWebflowApi\DataApi\Versions\V2\CollectionItems
  * @todo create unit tests for this class
  */
 class StagedCollection extends StagedItems

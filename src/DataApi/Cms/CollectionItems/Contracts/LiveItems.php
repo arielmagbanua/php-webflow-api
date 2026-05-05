@@ -9,8 +9,7 @@ use ArielMagbanua\PhpWebflowApi\DataApi\Cms\CollectionItems\Contracts\Collection
 /**
  * The Live Items contract for the Webflow API
  *
- * @package ArielMagbanua\PhpWebflowApi\Collections\Contracts
- * @author Ariel Magbanua <ariel@arielmagbanua.com>
+ * @package ArielMagbanua\PhpWebflowApi\DataApi\Cms\CollectionItems\Contracts
  */
 abstract class LiveItems extends WebflowCollection
 {
