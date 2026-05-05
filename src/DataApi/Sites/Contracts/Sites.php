@@ -2,15 +2,14 @@
 
 declare(strict_types=1);
 
-namespace ArielMagbanua\PhpWebflowApi\DataApi\Versions\V2;
+namespace ArielMagbanua\PhpWebflowApi\DataApi\Sites\Contracts;
 
 use ArielMagbanua\PhpWebflowApi\DataApi\Api;
 
 /**
  * The Sites contract for the Webflow API
  *
- * @package ArielMagbanua\PhpWebflowApi\Versions\V2
- * @author Ariel Magbanua <ariel@arielmagbanua.com>
+ * @package ArielMagbanua\PhpWebflowApi\DataApi\Sites\Contracts
  */
 abstract class Sites extends Api
 {
