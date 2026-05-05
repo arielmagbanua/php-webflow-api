@@ -10,7 +10,6 @@ use ArielMagbanua\PhpWebflowApi\DataApi\Api;
  * The Token class for retrieving Authorization information.
  *
  * @package ArielMagbanua\PhpWebflowApi\DataApi\Versions\V2
- * @todo create unit tests for this class
  */
 class TokenInfo extends Api
 {
