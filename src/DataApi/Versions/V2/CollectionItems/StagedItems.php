@@ -4,19 +4,18 @@ declare(strict_types=1);
 
 namespace ArielMagbanua\PhpWebflowApi\DataApi\Versions\V2\CollectionItems;
 
-use ArielMagbanua\PhpWebflowApi\DataApi\Cms\CollectionItems\Contracts\LiveItems;
+use ArielMagbanua\PhpWebflowApi\DataApi\Cms\CollectionItems\Contracts\StagedItems as StagedItemsContract;
 
 /**
- * The Live Collection class for the Webflow API
+ * The Staged Collection class for the Webflow API
  *
- * @package ArielMagbanua\PhpWebflowApi\Collections\V2
- * @author Ariel Magbanua <ariel@arielmagbanua.com>
+ * @package ArielMagbanua\PhpWebflowApi\DataApi\Versions\V2\CollectionItems
  * @todo create unit tests for this class
  */
-class LiveCollection extends LiveItems
+class StagedItems extends StagedItemsContract
 {
     /**
-     * The Live Collection constructor
+     * The Staged Collection constructor
      *
      * @param string $accessToken The access token
      * @param string $collectionId The collection ID
@@ -28,7 +27,9 @@ class LiveCollection extends LiveItems
     }
 
     /**
-     * List the live items
+     * List of all Items within a Collection.
+     *
+     * @link https://developers.webflow.com/data/v2.0.0/reference/cms/collection-items/staged-items/list-items
      *
      * @param string|null $cmsLocaleId The CMS locale ID
      * @param int|null $offset The offset
@@ -77,9 +78,11 @@ class LiveCollection extends LiveItems
     }
 
     /**
-     * Get a live item
+     * Get details of a selected Collection Item.
      *
-     * @param string $id The ID of the live item
+     * @link https://developers.webflow.com/data/v2.0.0/reference/cms/collection-items/staged-items/get-item
+     *
+     * @param string $id The ID of the item
      * @param string|null $cmsLocaleId The CMS locale ID
      */
     public function getItem(string $id, ?string $cmsLocaleId = null): ?array
@@ -101,9 +104,9 @@ class LiveCollection extends LiveItems
     }
 
     /**
-     * Get a live item by slug
+     * Get an item by slug
      *
-     * @param string $slug The slug of the live item
+     * @param string $slug The slug of the item
      * @param string|null $cmsLocaleId The CMS locale ID
      */
     public function getItemBySlug(string $slug, ?string $cmsLocaleId = null): ?array
@@ -127,7 +130,9 @@ class LiveCollection extends LiveItems
     }
 
     /**
-     * Create the live items
+     * Create an item or multiple items in a CMS Collection across multiple corresponding locales.
+     *
+     * @link https://developers.webflow.com/data/v2.0.0/reference/cms/collection-items/staged-items/create-items
      *
      * @param array $items The items to create
      * @param bool|null $skipInvalidFiles Whether to skip invalid files
@@ -135,7 +140,7 @@ class LiveCollection extends LiveItems
     public function createItems(array $items, ?bool $skipInvalidFiles = null): ?array
     {
         // create the uri for the request
-        $uri = 'collections/' . $this->collectionId . '/items/' . $this->type;
+        $uri = 'collections/' . $this->collectionId . '/items/' . $this->type . '/bulk';
 
         // append the arguments as query parameters
         // but only set the parameters that are not null
@@ -154,7 +159,9 @@ class LiveCollection extends LiveItems
     }
 
     /**
-     * Update the live items
+     *  Update a single item or multiple items in a Collection.
+     *
+     * @link https://developers.webflow.com/data/v2.0.0/reference/cms/collection-items/staged-items/update-items
      *
      * @param array $items The items to update
      * @param bool|null $skipInvalidFiles Whether to skip invalid files
@@ -181,7 +188,9 @@ class LiveCollection extends LiveItems
     }
 
     /**
-     * Unpublish the live items
+     * Delete Items from a Collection.
+     *
+     * @link https://developers.webflow.com/data/v2.0.0/reference/cms/collection-items/staged-items/delete-items
      *
      * Example $items structure:
      * ```php
@@ -192,9 +201,9 @@ class LiveCollection extends LiveItems
      *      ]
      * ]
      * ```
-     * @param array $items The items to unpublish
+     * @param array $items The items to delete
      */
-    public function unpublishItems(array $items): ?array
+    public function deleteItems(array $items): ?array
     {
         // create the uri for the request
         $uri = 'collections/' . $this->collectionId . '/items/' . $this->type;
@@ -205,6 +214,32 @@ class LiveCollection extends LiveItems
             uri: $uri,
             body: [
                 'items' => $items,
+            ],
+        );
+    }
+
+    /**
+     * Publish an item or multiple items.
+     *
+     * @link https://developers.webflow.com/data/v2.0.0/reference/cms/collection-items/staged-items/publish-item
+     *
+     * Example $ids structure:
+     * ```php
+     * $ids = ['580e64008c9a982ac9b8b754', '580e64008c9a982ac9b8b755'];
+     * ```
+     * @param array $ids The IDs of the items to publish
+     */
+    public function publishItemIds(array $ids): ?array
+    {
+        // create the uri for the request
+        $uri = 'collections/' . $this->collectionId . '/items/publish';
+
+        // send the request
+        return $this->sendRequest(
+            method: 'POST',
+            uri: $uri,
+            body: [
+                'items' => $ids,
             ],
         );
     }

@@ -4,18 +4,17 @@ declare(strict_types=1);
 
 namespace ArielMagbanua\PhpWebflowApi\DataApi\Cms\CollectionItems\Contracts;
 
-use ArielMagbanua\PhpWebflowApi\DataApi\Cms\CollectionItems\Contracts\Collection as WebflowCollection;
+use ArielMagbanua\PhpWebflowApi\DataApi\Cms\CollectionItems\Contracts\Items;
 
 /**
  * The Staged Items contract for the Webflow API
  *
- * @package ArielMagbanua\PhpWebflowApi\Collections\Contracts
- * @author Ariel Magbanua <ariel@arielmagbanua.com>
+ * @package ArielMagbanua\PhpWebflowApi\DataApi\Cms\CollectionItems\Contracts
  */
-abstract class StagedItems extends WebflowCollection
+abstract class StagedItems extends Items
 {
     /**
-     * List the live items
+     * List of all Items within a Collection.
      *
      * @param string|null $cmsLocaleId The CMS locale ID
      * @param int|null $offset The offset
@@ -42,23 +41,23 @@ abstract class StagedItems extends WebflowCollection
     ): ?array;
 
     /**
-     * Get a live item
+     * Get details of a selected Collection Item.
      *
-     * @param string $id The ID of the live item
+     * @param string $id The ID of the staged item
      * @param string|null $cmsLocaleId The CMS locale ID
      */
     abstract public function getItem(string $id, ?string $cmsLocaleId = null): ?array;
 
     /**
-     * Get a live item by slug
+     * Get a staged item by slug
      *
-     * @param string $slug The slug of the live item
+     * @param string $slug The slug of the staged item
      * @param string|null $cmsLocaleId The CMS locale ID
      */
     abstract public function getItemBySlug(string $slug, ?string $cmsLocaleId = null): ?array;
 
     /**
-     * Create the live items
+     * Create an item or multiple items in a CMS Collection across multiple corresponding locales.
      *
      * @param array $items The items to create
      * @param bool|null $skipInvalidFiles Whether to skip invalid files
@@ -66,7 +65,7 @@ abstract class StagedItems extends WebflowCollection
     abstract public function createItems(array $items, ?bool $skipInvalidFiles = null): ?array;
 
     /**
-     * Update the live items
+     * Update a single item or multiple items in a Collection.
      *
      * @param array $items The items to update
      * @param bool|null $skipInvalidFiles Whether to skip invalid files
@@ -74,16 +73,16 @@ abstract class StagedItems extends WebflowCollection
     abstract public function updateItems(array $items, ?bool $skipInvalidFiles = null): ?array;
 
     /**
-     * Unpublish the live items
+     * Delete Items from a Collection.
      *
-     * @param array $ids The IDs of the live items to unpublish
+     * @param array $ids The IDs of the staged items to delete
      */
     abstract public function deleteItems(array $ids): ?array;
 
     /**
-     * Publish the live items
+     * Publish an item or multiple items.
      *
-     * @param array $ids The IDs of the live items to publish
+     * @param array $ids The IDs of the staged items to publish
      */
     abstract public function publishItemIds(array $ids): ?array;
 }

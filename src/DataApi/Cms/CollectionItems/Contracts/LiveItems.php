@@ -4,15 +4,14 @@ declare(strict_types=1);
 
 namespace ArielMagbanua\PhpWebflowApi\DataApi\Cms\CollectionItems\Contracts;
 
-use ArielMagbanua\PhpWebflowApi\DataApi\Cms\CollectionItems\Contracts\Collection as WebflowCollection;
+use ArielMagbanua\PhpWebflowApi\DataApi\Cms\CollectionItems\Contracts\Items;
 
 /**
  * The Live Items contract for the Webflow API
  *
- * @package ArielMagbanua\PhpWebflowApi\Collections\Contracts
- * @author Ariel Magbanua <ariel@arielmagbanua.com>
+ * @package ArielMagbanua\PhpWebflowApi\DataApi\Cms\CollectionItems\Contracts
  */
-abstract class LiveItems extends WebflowCollection
+abstract class LiveItems extends Items
 {
     /**
      * The resource type. Can be 'live' or ''
@@ -20,7 +19,7 @@ abstract class LiveItems extends WebflowCollection
     protected string $type = 'live';
 
     /**
-     * List the live items
+     * List all published items in a collection.
      *
      * @param string|null $cmsLocaleId The CMS locale ID
      * @param int|null $offset The offset
@@ -47,7 +46,7 @@ abstract class LiveItems extends WebflowCollection
     ): ?array;
 
     /**
-     * Get a live item
+     * Get details of a selected Collection live Item.
      *
      * @param string $id The ID of the live item
      * @param string|null $cmsLocaleId The CMS locale ID
@@ -55,7 +54,7 @@ abstract class LiveItems extends WebflowCollection
     abstract public function getItem(string $id, ?string $cmsLocaleId = null): ?array;
 
     /**
-     * Get a live item by slug
+     * Get a live item by slug.
      *
      * @param string $slug The slug of the live item
      * @param string|null $cmsLocaleId The CMS locale ID
@@ -63,7 +62,7 @@ abstract class LiveItems extends WebflowCollection
     abstract public function getItemBySlug(string $slug, ?string $cmsLocaleId = null): ?array;
 
     /**
-     * Create the live items
+     * Create item(s) in a collection that will be immediately published to the live site.
      *
      * @param array $items The items to create
      * @param bool|null $skipInvalidFiles Whether to skip invalid files
@@ -71,7 +70,7 @@ abstract class LiveItems extends WebflowCollection
     abstract public function createItems(array $items, ?bool $skipInvalidFiles = null): ?array;
 
     /**
-     * Update the live items
+     * Update a single published item or multiple published items (up to 100) in a Collection.
      *
      * @param array $items The items to update
      * @param bool|null $skipInvalidFiles Whether to skip invalid files
@@ -79,7 +78,7 @@ abstract class LiveItems extends WebflowCollection
     abstract public function updateItems(array $items, ?bool $skipInvalidFiles = null): ?array;
 
     /**
-     * Unpublish the live items
+     * Unpublish up to 100 items from the live site and set the isDraft property to true.
      *
      * @param array $ids The IDs of the live items to unpublish
      */

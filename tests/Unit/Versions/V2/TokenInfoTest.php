@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace ArielMagbanua\PhpWebflowApi\Tests\Unit\Versions\V2\Authorization;
+namespace ArielMagbanua\PhpWebflowApi\Tests\Unit\Versions\V2;
 
-use ArielMagbanua\PhpWebflowApi\DataApi\Versions\V2\Authorization\Token;
+use ArielMagbanua\PhpWebflowApi\DataApi\Versions\V2\TokenInfo;
 use GuzzleHttp\Client;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
@@ -19,7 +19,7 @@ class TokenInfoTest extends TestCase
     public function testGetUserInfo(): void
     {
         // Load the payload
-        $payloadPath = __DIR__ . '/../../../../payloads/V2/Authorization/getUserInfoResponsePayload.json';
+        $payloadPath = __DIR__ . '/../../../payloads/V2/Authorization/getUserInfoResponsePayload.json';
         $payload = json_decode(file_get_contents($payloadPath), true);
 
         // Mock the Guzzle client
@@ -30,11 +30,11 @@ class TokenInfoTest extends TestCase
         $client = new Client(['handler' => $handlerStack]);
 
         // Instantiate Token and set the mocked client
-        $token = new Token('test-access-token');
+        $token = new TokenInfo('test-access-token');
         $token->setHttpClient($client);
 
         // Call the method and assert the result
-        $result = $token->getUserInfo();
+        $result = $token->getAuthorizationUserInfo();
         $this->assertSame($payload, $result);
     }
 
@@ -44,7 +44,7 @@ class TokenInfoTest extends TestCase
     public function testGetInfo(): void
     {
         // Load the payload
-        $payloadPath = __DIR__ . '/../../../../payloads/V2/Authorization/getInfoResponsePayload.json';
+        $payloadPath = __DIR__ . '/../../../payloads/V2/Authorization/getInfoResponsePayload.json';
         $payload = json_decode(file_get_contents($payloadPath), true);
 
         // Mock the Guzzle client
@@ -55,11 +55,11 @@ class TokenInfoTest extends TestCase
         $client = new Client(['handler' => $handlerStack]);
 
         // Instantiate Token and set the mocked client
-        $token = new Token('test-access-token');
+        $token = new TokenInfo('test-access-token');
         $token->setHttpClient($client);
 
         // Call the method and assert the result
-        $result = $token->getInfo();
+        $result = $token->getAuthorizationInfo();
         $this->assertSame($payload, $result);
     }
 }

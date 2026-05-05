@@ -2,18 +2,16 @@
 
 declare(strict_types=1);
 
-namespace ArielMagbanua\PhpWebflowApi\DataApi\Versions\V2\Authorization;
+namespace ArielMagbanua\PhpWebflowApi\DataApi\Versions\V2;
 
 use ArielMagbanua\PhpWebflowApi\DataApi\Api;
 
 /**
- * The Token class for the Webflow API
+ * The Token class for retrieving Authorization information.
  *
- * @package ArielMagbanua\PhpWebflowApi\Auth\Authorization\v2
- * @author Ariel Magbanua <ariel@arielmagbanua.com>
- * @todo create unit tests for this class
+ * @package ArielMagbanua\PhpWebflowApi\DataApi\Versions\V2
  */
-class Token extends Api
+class TokenInfo extends Api
 {
     /**
      * The Token constructor
@@ -26,9 +24,11 @@ class Token extends Api
     }
 
     /**
-     * Information about the Authorized User
+     * Information about the Authorized User.
+     *
+     * @link https://developers.webflow.com/data/v2.0.0/reference/token/authorized-by
      */
-    public function getUserInfo(): ?array
+    public function getAuthorizationUserInfo(): ?array
     {
         return $this->sendRequest(
             method: 'GET',
@@ -37,9 +37,11 @@ class Token extends Api
     }
 
     /**
-     * Information about the authorization token
+     * Information about the authorization token.
+     *
+     * @link https://developers.webflow.com/data/v2.0.0/reference/token/introspect
      */
-    public function getInfo(): ?array
+    public function getAuthorizationInfo(): ?array
     {
         return $this->sendRequest(
             method: 'GET',
