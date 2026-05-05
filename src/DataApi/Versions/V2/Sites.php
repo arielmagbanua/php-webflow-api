@@ -74,7 +74,7 @@ class Sites extends SitesContract
      *
      * @link https://developers.webflow.com/data/v2.0.0/reference/sites/publish
      *
-     * @param string $siteId
+     * @param string $siteId The site ID
      * @return array|null
      */
     public function publishSite(string $siteId): ?array

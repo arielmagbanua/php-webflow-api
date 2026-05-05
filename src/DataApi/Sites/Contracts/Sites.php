@@ -17,6 +17,7 @@ abstract class Sites extends Api
      * The Sites constructor
      *
      * @param string $accessToken The access token
+     * @param string $version The version of the API
      */
     public function __construct(string $accessToken, string $version)
     {
@@ -47,7 +48,7 @@ abstract class Sites extends Api
      * Publishes a site or an individual page to one or more domains.
      * If multiple individual pages are published to staging, publishing from staging to production publishes all staged changes.
      *
-     * @param string $siteId
+     * @param string $siteId The site ID
      * @return array|null
      */
     abstract public function publishSite(string $siteId): ?array;
