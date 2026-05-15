@@ -35,8 +35,8 @@ class Fields extends CollectionFields
      *
      * @link https://developers.webflow.com/data/v2.0.0/reference/cms/collection-fields/create
      *
-     * @param string $collectionId The collection ID
-     * @param array $field The field to create
+     * @param string $collectionId Unique identifier for a Collection
+     * @param array $field This can be static field, option field, or reference field
      */
     public function createField(string $collectionId, array $field)
     {
