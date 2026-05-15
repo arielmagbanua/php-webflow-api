@@ -1,6 +1,6 @@
-![Tests / Lint](https://github.com/arielmagbanua/php-webflow-api/actions/workflows/tests.yml/badge.svg)
-[![Packagist Version](https://img.shields.io/packagist/v/arielmagbanua/php-webflow-sdk)](https://packagist.org/packages/arielmagbanua/php-webflow-sdk)
-[![Packagist Downloads](https://img.shields.io/packagist/dt/arielmagbanua/php-webflow-sdk?label=packagist%20downloads)](https://packagist.org/packages/arielmagbanua/php-webflow-sdk)
+![Tests / Lint](https://github.com/arielmagbanua/webflow-php-sdk/actions/workflows/tests.yml/badge.svg)
+[![Packagist Version](https://img.shields.io/packagist/v/arielmagbanua/webflow-php-sdk)](https://packagist.org/packages/arielmagbanua/webflow-php-sdk)
+[![Packagist Downloads](https://img.shields.io/packagist/dt/arielmagbanua/webflow-php-sdk?label=packagist%20downloads)](https://packagist.org/packages/arielmagbanua/webflow-php-sdk)
 
 # PHP Webflow SDK
 
@@ -8,7 +8,7 @@ PHP SDK for the Webflow Data API
 
 # Authentication
 
-If you are not using a workspace or site token, you can use the [OAuth](src/DataApi/Versions/V2/Authentication/OAuth.php) class to retrieve an access token.
+If you are not using a workspace or site token, you can use the [OAuth](/src/DataApi/Versions/V2/Authentication/OAuth.php) class to retrieve an access token.
 
 ```php
 // include the vendor autoload
